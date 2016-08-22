@@ -1,0 +1,24 @@
+{
+  "name": "buttonmaker-io",
+  "version": "1.0.0",
+  "description": "An online PNG button maker",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --content-base public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bseib/buttonmaker-io.git"
+  },
+  "author": "Broc Seib",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bseib/buttonmaker-io/issues"
+  },
+  "homepage": "https://github.com/bseib/buttonmaker-io#readme",
+  "devDependencies": {
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
