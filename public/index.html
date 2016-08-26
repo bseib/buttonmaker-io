@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>buttonmaker.io</title>
     <meta name="description" content="Customize and generate your own PNG buttons">
-    <meta name="author" content="github.Acom/bseib/buttonmaker-io">
+    <meta name="author" content="github.com/bseib/buttonmaker-io">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,18 +28,66 @@
     <![endif]-->
 </head>
 
-<body>
+<body class="button-maker">
+
+    <div class="header">
+        <div class="logo"><img src="/img/logo.svg"></div>
+        <div class="brand-title">buttonmaker.io</div>
+    </div>
+
+    <div class="notes">
+        <h3>Customize and generate your own PNG buttons.
+        </h3>
+    </div>
 
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3 text-center">
-                <h1>What a fantastic start!</h1>
+        <div x-ng-app="app">
+            <div x-ng-controller="ButtonMakerCtrl" x-ng-init="bm.init()">
+
+                <br/>
+                <br/>
+
+
+                <div class="form-group form-inline">
+                    <label>Button title</label>
+                    <input class="form-control" type="text" x-ng-model="bm.title" x-ng-change="bm.doStuffChanged()">
+                    <label>Button color</label>
+                    <select class="form-control" x-ng-options="color for color in bm.colors" x-ng-model="bm.color" x-ng-change="bm.doStuffChanged()"></select>
+                </div>
+
+                <h4>preview:</h4>
+                <div class="preview">
+                    <div id="sample">
+                        <button class="btn btn-primary btn-custom" x-ng-class="bm.color"><span x-ng-bind="bm.title"></span></button>
+                    </div>
+                    <div class="size"><span x-ng-bind="bm.btnWidth"></span>px &times; <span x-ng-bind="bm.btnHeight"></span>px</div>
+                </div>
+
+                <br/>
+                <div>
+                    <button class="save-as" x-ng-click="bm.saveAs()">Save button as PNG image</button>
+                    <div class="save-as">filename: <span x-ng-bind="bm.filename"></span></div>
+                </div>
 
             </div>
         </div>
     </div>
+
+    <hr/>
+    <div class="notes">
+        <p>
+            This tool needs more knobs and levers, to offer more colors, fonts, sizes, padding, etc. Hey, I just put it together quickly, so file an issue on github or submit a pull request. :-)
+        </p>
     </div>
 
+    <div class="footer">
+        <div class="">
+            <a href="https://github.com/bseib/buttonmaker-io/issues/new" title="Submit Feedback">Submit Feedback</a>
+        </div>
+
+    </div>
+
+    <script src="/js/html2canvas.js"></script>
     <script src="/js/app.bundle.js"></script>
 
 </body>
