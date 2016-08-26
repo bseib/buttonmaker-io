@@ -18,7 +18,14 @@
   },
   "homepage": "https://github.com/bseib/buttonmaker-io#readme",
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "css-loader": "^0.24.0",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "extract-text-webpack-plugin": "^1.0.1"
   }
 }

@@ -1,0 +1,49 @@
+@import url( '//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic');
+@import 'variables.less';
+
+@footer-height: 50px;
+
+body {
+    position:relative;
+    background-color: #f8f8f8;
+    padding-bottom: @footer-height;
+    font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: @color-dark;
+}
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    .logo img {
+        height: 30px;
+    }
+    .brand-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+}
+.footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: @color-dark;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    height: @footer-height;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
+}

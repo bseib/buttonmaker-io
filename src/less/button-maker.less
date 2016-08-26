@@ -1,0 +1,56 @@
+@import 'btn.less';
+@import 'variables.less';
+
+.button-maker {
+    .preview {
+        border: 2px solid #555;
+        background-color: #fff;
+        padding: 30px;
+        text-align: center;
+        min-width: 300px;
+    }
+    #sample {
+        display: inline-block;
+    }
+    .btn {
+        border-radius: 4px;
+    }
+    .btn-primary {
+        color: @color-btn-primary-text;
+        background-color: @color-btn-primary-bg;
+        // overrides
+        background-image: none;
+        border-color: @color-btn-primary-bg;
+        &:hover {
+            background-color: @color-btn-primary-bg-hover;
+            // overrides
+            background-image: none;
+            color: @color-btn-primary-text;
+        }
+    }
+    .btn-custom {
+        font-size: 22px;
+        padding: 7px 21px;
+    }
+    .save-as {
+        display: inline-block;
+        margin-right: 15px;
+        margin-bottom: 5px;
+    }
+    .size {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    .green {
+        background-color: @color-green; //  background-image: none;
+        border: none;
+    }
+    .blue {
+        background-color: @color-blue; //  background-image: none;
+        //  border: none;
+    }
+
+    .notes {
+      padding: 20px;
+    }
+}
