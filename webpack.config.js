@@ -1,5 +1,5 @@
 
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: './src/js/app.js',
     output: {
@@ -10,14 +10,23 @@ module.exports = {
 //    devtool: 'source-map',
 
     module: {
-        loaders: [{
-            test: /\.less$/,
-            exclude: /node_modules/,
-            loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!less-loader"),
-        }, ],
+      rules: [
+        {
+          test: /\.less$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: '../',
+                hmr: process.env.NODE_ENV === 'development',
+              },
+            },
+            'css-loader',
+          ],
+        },
+      ],
     },
-
     plugins: [
-        new ExtractTextPlugin("css/all.css")
+        new MiniCssExtractPlugin({filename: "css/all.css"})
     ]
 };
